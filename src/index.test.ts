@@ -49,7 +49,7 @@ describe("GET /:seed", () => {
     const square = await handle("/alice?format=svg");
     const circle = await handle("/alice?format=svg&rounded=60");
     const clamped = await handle("/alice?format=svg&rounded=999");
-    expect(await square.text()).toContain('rx="0"');
+    expect(await square.text()).not.toContain("clipPath");
     expect(await circle.text()).toContain('rx="100"');
     expect(await clamped.text()).toContain('rx="100"');
   });

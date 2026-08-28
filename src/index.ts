@@ -1,19 +1,21 @@
 import { Elysia, t } from "elysia";
-import { avatar } from "./avatar";
+import { png, svg } from "./avatar";
+
+const cache = "public, max-age=604800, immutable";
 
 const app = new Elysia().get(
   "/:seed",
   ({ params: { seed }, query: { size, rounded, format } }) => {
-    const { body, type } = avatar({ seed, size, rounded, format });
-    return new Response(body, {
-      headers: {
-        "content-type": type,
-        "cache-control": "public, max-age=604800, immutable",
-      },
+    if (format === "svg") {
+      return new Response(svg(seed, size, rounded), {
+        headers: { "content-type": "image/svg+xml", "cache-control": cache },
+      });
+    }
+    return new Response(png(seed, size, rounded), {
+      headers: { "content-type": "image/png", "cache-control": cache },
     });
   },
   {
-    params: t.Object({ seed: t.String() }),
     query: t.Object({
       size: t.Integer({ minimum: 1, maximum: 512, default: 120 }),
       rounded: t.Integer({ default: 0 }),
@@ -23,10 +25,3 @@ const app = new Elysia().get(
 );
 
 export default app;
-
-if (import.meta.main) {
-  app.listen(3000);
-  console.log(
-    `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
-  );
-}

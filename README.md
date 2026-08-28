@@ -35,5 +35,3 @@ Responses cache with `public, max-age=604800, immutable`.
 ```bash
 bun run dev
 ```
-
-Default export lives in `src/index.ts`. `listen()` runs only when that file is the entry. Vercel uses the default export and `vercel.json` `bunVersion` `1.x`.
