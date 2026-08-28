@@ -10,10 +10,12 @@ export function svg(seed: string, size: number, rounded: number) {
 }
 
 export function png(seed: string, size: number, rounded: number) {
-  return new Resvg(svg(seed, size, rounded), {
-    fitTo: { mode: "width", value: size },
-    font: { loadSystemFonts: false },
-  })
-    .render()
-    .asPng();
+  return new Uint8Array(
+    new Resvg(svg(seed, size, rounded), {
+      fitTo: { mode: "width", value: size },
+      font: { loadSystemFonts: false },
+    })
+      .render()
+      .asPng(),
+  );
 }
