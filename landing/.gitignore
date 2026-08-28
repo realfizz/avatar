@@ -4,5 +4,3 @@ dist
 dist-ssr
 *.local
 .env
-.wrangler
-.output
