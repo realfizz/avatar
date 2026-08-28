@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+.root {
+  isolation: isolate;
+}
+
+html,
+body {
+  @apply m-0 font-sans;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: -0.15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fcfcfc;
+}
