@@ -1,15 +1,39 @@
-# Elysia with Bun runtime
+# Avatar
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
+Deterministic dithered avatars from a seed.
+
+## Usage
+
+```
+GET /:seed
 ```
 
-## Development
-To start the development server run:
+Each seed produces the same avatar every time. The service does not interpret the seed.
+
+PNG at 120px:
+
+```
+GET /alice
+```
+
+### Query
+
+| Query | Default | Meaning |
+| --- | --- | --- |
+| `size` | `120` | Output pixels. 1 to 512. |
+| `rounded` | `0` | Corner radius in pixels. `0` is square. Half of `size` or more is a circle. |
+| `format` | `png` | `png` or `svg`. Query param, not a file extension. |
+
+`GET /next.js?format=svg` is an avatar for the seed `next.js`.
+
+`GET /` with no seed is 404.
+
+Responses cache with `public, max-age=604800, immutable`.
+
+## Local
+
 ```bash
 bun run dev
 ```
 
-Open http://localhost:3000/ with your browser to see the result.
+Default export lives in `src/index.ts`. `listen()` runs only when that file is the entry. Vercel uses the default export and `vercel.json` `bunVersion` `1.x`.
