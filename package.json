@@ -8,10 +8,10 @@
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",
     "dither-avatar": "^1.0.0",
-    "elysia": "latest"
+    "elysia": "1.4.30"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "1.4.0"
   },
   "module": "src/index.js"
 }
