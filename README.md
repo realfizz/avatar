@@ -1,36 +1,36 @@
-# Avatar
+# avatar
 
-Deterministic dithered avatars from a seed.
+Dithered avatars from any seed.
 
 ## Usage
 
-```
-GET /:seed
-```
-
-Each seed produces the same avatar every time. The service does not interpret the seed.
-
-PNG at 120px:
+Pass a seed. Same seed always comes back the same.
 
 ```
-GET /alice
+http://localhost:3000/alice
 ```
 
-### Query
+You get a PNG, 120×120.
 
-| Query | Default | Meaning |
-| --- | --- | --- |
-| `size` | `120` | Output pixels. 1 to 512. |
-| `rounded` | `0` | Corner radius in pixels. `0` is square. Half of `size` or more is a circle. |
-| `format` | `png` | `png` or `svg`. Query param, not a file extension. |
+### Roundness
 
-`GET /next.js?format=svg` is an avatar for the seed `next.js`.
+```
+http://localhost:3000/alice?rounded=60
+```
 
-`GET /` with no seed is 404.
+### Size
 
-Responses cache with `public, max-age=604800, immutable`.
+```
+http://localhost:3000/alice?size=32
+```
 
-## Local
+### SVG
+
+```
+http://localhost:3000/alice?format=svg
+```
+
+## Run
 
 ```bash
 bun run dev
