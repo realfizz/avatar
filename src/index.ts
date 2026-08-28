@@ -18,7 +18,7 @@ const app = new Elysia().get(
   {
     query: t.Object({
       size: t.Integer({ minimum: 1, maximum: 512, default: 120 }),
-      rounded: t.Integer({ default: 0 }),
+      rounded: t.Integer({ minimum: 0, default: 0 }),
       format: t.UnionEnum(["png", "svg"], { default: "png" }),
     }),
   },

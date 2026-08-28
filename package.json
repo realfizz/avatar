@@ -2,7 +2,6 @@
   "name": "avatar",
   "version": "1.0.50",
   "scripts": {
-    "test": "bun test",
     "dev": "bun run --watch src/listen.ts"
   },
   "dependencies": {
