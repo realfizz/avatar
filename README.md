@@ -1,15 +1,35 @@
-# Elysia with Bun runtime
+# avatar
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
+💎 Dithered avatars as a microservice
+
+## Usage
+
+```
+http://localhost:3000/fizz
 ```
 
-## Development
-To start the development server run:
+You get a PNG, 120×120.
+
+### Roundness
+
+```
+http://localhost:3000/fizz?rounded=60
+```
+
+### Size
+
+```
+http://localhost:3000/fizz?size=32
+```
+
+### SVG
+
+```
+http://localhost:3000/fizz?format=svg
+```
+
+## Run
+
 ```bash
 bun run dev
 ```
-
-Open http://localhost:3000/ with your browser to see the result.

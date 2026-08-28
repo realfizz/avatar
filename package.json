@@ -2,14 +2,15 @@
   "name": "avatar",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/listen.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@resvg/resvg-js": "^2.6.2",
+    "dither-avatar": "^1.0.0",
+    "elysia": "1.4.30"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "1.4.0"
   },
   "module": "src/index.js"
 }
