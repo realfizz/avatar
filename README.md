@@ -5,7 +5,7 @@
 ## Usage
 
 ```
-http://localhost:3000/fizz
+https://avatar-api.fizz.blog/fizz
 ```
 
 You get a PNG, 120×120.
@@ -13,19 +13,19 @@ You get a PNG, 120×120.
 ### Roundness
 
 ```
-http://localhost:3000/fizz?rounded=60
+https://avatar-api.fizz.blog/fizz?rounded=60
 ```
 
 ### Size
 
 ```
-http://localhost:3000/fizz?size=32
+https://avatar-api.fizz.blog/fizz?size=32
 ```
 
 ### SVG
 
 ```
-http://localhost:3000/fizz?format=svg
+https://avatar-api.fizz.blog/fizz?format=svg
 ```
 
 ## Run

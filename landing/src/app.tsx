@@ -12,25 +12,37 @@ export function App() {
           <div className="space-y-6">
             <h2 className="font-[450]">Usage</h2>
             <CodeBlock>
-              <CodeBlockCode code="GET /fizz" language="bash" />
+              <CodeBlockCode
+                code="GET https://avatar-api.fizz.blog/fizz"
+                language="bash"
+              />
             </CodeBlock>
           </div>
           <div className="space-y-6">
             <h2 className="font-[450]">Size</h2>
             <CodeBlock>
-              <CodeBlockCode code="GET /fizz?size=64" language="bash" />
+              <CodeBlockCode
+                code="GET https://avatar-api.fizz.blog/fizz?size=64"
+                language="bash"
+              />
             </CodeBlock>
           </div>
           <div className="space-y-6">
             <h2 className="font-[450]">Rounded</h2>
             <CodeBlock>
-              <CodeBlockCode code="GET /fizz?rounded=60" language="bash" />
+              <CodeBlockCode
+                code="GET https://avatar-api.fizz.blog/fizz?rounded=60"
+                language="bash"
+              />
             </CodeBlock>
           </div>
           <div className="space-y-6">
             <h2 className="font-[450]">Format</h2>
             <CodeBlock>
-              <CodeBlockCode code="GET /fizz?format=svg" language="bash" />
+              <CodeBlockCode
+                code="GET https://avatar-api.fizz.blog/fizz?format=svg"
+                language="bash"
+              />
             </CodeBlock>
           </div>
         </div>
